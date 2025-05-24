@@ -15,6 +15,7 @@ class UserController extends Controller
             
             $users = User::all();
             return ResponseHelper::successResponse(
+                true,
                 "Data User",
                 $users
             );
