@@ -40,7 +40,7 @@ class KontenController extends Controller
             $validate = $this->validate($request, [
                 'judul' => 'required',
                 'isi' => 'required',
-                'gambar' => 'required|image|file|max:1024'
+                'gambar' => 'required|image|file|max:5120'
             ]);
 
             $validate['gambar'] = $request->file('gambar')->store('images');
