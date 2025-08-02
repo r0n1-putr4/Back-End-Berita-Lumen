@@ -23,4 +23,6 @@ $router->post('/users/login', 'UserController@login');
 $router->get('/kontens', 'KontenController@index');
 $router->post('/kontens', 'KontenController@store');
 $router->delete('/kontens/{id}', 'KontenController@destroy');
+$router->get('/kontens/gambar', 'KontenController@showImages');
+
 

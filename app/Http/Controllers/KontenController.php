@@ -59,7 +59,7 @@ class KontenController extends Controller
 
     public function destroy($id)
     {
-           
+
 
         try {
 
@@ -73,10 +73,29 @@ class KontenController extends Controller
                     true,
                     "Data Berhasil Dihapus",
                 );
-            } 
+            }
         } catch (\Exception $e) {
-            return ResponseHelper::errorResponse($e->getMessage());          
-            
+            return ResponseHelper::errorResponse($e->getMessage());
         }
+    }
+
+    public function showImages(Request $request) {
+        try {
+
+            header('Access-Control-Allow-Origin: *');
+            $path =$request->filename;
+            $path_notfound = "images/not_found.png";
+
+            if (!file_exists($path)) {
+                header("Content-Type: " . mime_content_type($path_notfound));
+                readfile($path_notfound);
+                exit;
+            }
+            header("Content-Type: " . mime_content_type($path));
+            return readfile($path);
+            exit;
+        } catch (\Exception $e) {
+            return ResponseHelper::errorResponse($e->getMessage());
+        }   
     }
 }
