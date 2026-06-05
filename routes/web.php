@@ -25,4 +25,6 @@ $router->post('/kontens', 'KontenController@store');
 $router->delete('/kontens/{id}', 'KontenController@destroy');
 $router->get('/kontens/gambar', 'KontenController@showImages');
 
+$router->get('/sinta/{id}', 'KontenController@profile');
+
 

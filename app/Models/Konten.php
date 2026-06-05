@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Konten extends Model
 {
     use HasFactory;
-    protected $table = 'kontens';
+    protected $table = 'articles';
 
     protected $guarded = ['id'];
 }

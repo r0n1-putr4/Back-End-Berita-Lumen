@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Konten;
 use App\Helpers\ResponseHelper;
+use App\Models\Konten;
+use App\Services\SintaService;
 use Illuminate\Http\Request;
+
 
 class KontenController extends Controller
 {
+
+    public function profile($id)
+    {
+        $service = new SintaService();
+
+        
+
+        return response()->json(
+            $service->getProfile($id)
+        );
+    }
+    
     public function index(Request $request)
     {
         try {
