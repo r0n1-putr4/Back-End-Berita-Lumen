@@ -52,6 +52,7 @@ class KontenController extends Controller
         try {
 
             $validate = $this->validate($request, [
+                'user_id' => 'required|integer|exists:users,id',
                 'judul' => 'required',
                 'isi' => 'required',
                 'gambar' => 'required|image|file|max:5120'
